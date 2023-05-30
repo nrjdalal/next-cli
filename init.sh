@@ -41,6 +41,7 @@ AUTORESPONSE
 # configuring .eslintrc.json
 curl -s "https://raw.githubusercontent.com/shadcn/next-template/main/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
+# configuring auth via next-auth and prisma
 pnpm add @next-auth/prisma-adapter @prisma/client next-auth && pnpm add -D prisma
 
 mkdir -p lib
@@ -50,3 +51,6 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.
 
 mkdir -p types
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts
+
+mkdir -p config
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/site.ts?v=$RANDOM" | cat >config/site.ts
