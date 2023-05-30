@@ -81,6 +81,6 @@ mkdir -p lib/validations
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/auth.ts?v=$RANDOM" | cat >lib/auth.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/db.ts?v=$RANDOM" | cat >lib/db.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.ts?v=$RANDOM" | cat >lib/session.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth?v=$RANDOM" | cat >lib/validations/auth.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth.ts?v=$RANDOM" | cat >lib/validations/auth.ts
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts
