@@ -15,5 +15,5 @@ export default async function DashboardPage() {
     redirect(authOptions?.pages?.signIn || '/access')
   }
 
-  return <>Dashboard</>
+  return <div>Dashboard</div>
 }
