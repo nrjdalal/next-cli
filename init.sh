@@ -10,11 +10,17 @@ pnpm create next-app --ts --tailwind --eslint --app --import-alias "@/*" --use-p
 
 AUTORESPONSE
 
+# managing dependencies
+
 pnpm add -D $(npx depcheck --oneline | awk 'NR==2')
 pnpm add -D $(cat package.json | grep 'eslint' | awk -F\" '{print $2}' | xargs)
 pnpm add -D $(cat package.json | grep 'typescript' | awk -F\" '{print $2}' | xargs)
 
+# adding dependencies
+
 pnpm add next-themes sharp
+
+# adding files and folders to .gitignore
 
 cat >>.gitignore <<EOF
 
@@ -26,9 +32,10 @@ yarn.lock
 /.vscode
 EOF
 
+# adding configuration files
+
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
-
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
 pnpx shadcn-ui init <<AUTORESPONSE
@@ -59,6 +66,8 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/fonts.ts
 
 mkdir -p types
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts?v=$RANDOM" | cat >types/nav.ts
+
+# adding next-auth and prisma
 
 pnpm add @next-auth/prisma-adapter @prisma/client next-auth && pnpm add -D prisma
 
