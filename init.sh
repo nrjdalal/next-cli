@@ -71,6 +71,8 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts
 
 pnpm add @hookform/resolvers @next-auth/prisma-adapter @prisma/client next-auth react-hook-form zod && pnpm add -D prisma
 
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.example"
+
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.ts?v=$RANDOM" | cat >"middleware.ts"
 
 mkdir -p 'app/(auth)/access' && mkdir -p 'app/api/auth/[...nextauth]'
