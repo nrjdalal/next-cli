@@ -31,14 +31,15 @@ EOF
 
 # adding prettier and plugins
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
-
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
 
+# making repository compatible with shadcn/ui
 pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
 
-curl -s https://raw.githubusercontent.com/shadcn/next-template/main/.eslintrc.json | cat >.eslintrc.json
+# configuring .eslintrc.json
+curl -s "https://raw.githubusercontent.com/shadcn/next-template/main/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
 pnpm add @next-auth/prisma-adapter @prisma/client next-auth && pnpm add -D prisma
 
