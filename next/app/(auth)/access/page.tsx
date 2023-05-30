@@ -18,7 +18,7 @@ export default function AccessPage() {
         href="/"
         className={cn(
           buttonVariants({ variant: 'ghost' }),
-          'absolute left-4 top-20'
+          'absolute left-4 top-4'
         )}
       >
         <>
