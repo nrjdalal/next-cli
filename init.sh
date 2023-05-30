@@ -38,7 +38,7 @@ AUTORESPONSE
 pnpx shadcn-ui add button
 
 mkdir -p app
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >lib/auth.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >app/layout.tsx
 
 mkdir -p components
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/icons.tsx?v=$RANDOM" | cat >components/icons.tsx
