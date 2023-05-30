@@ -31,7 +31,7 @@ EOF
 
 # adding prettier and plugins
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
-curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
+curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
 
 # making repository compatible with shadcn/ui
 pnpx shadcn-ui init <<AUTORESPONSE
