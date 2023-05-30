@@ -76,7 +76,7 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.t
 mkdir -p 'app/(auth)/access' && mkdir -p 'app/api/auth/[...nextauth]'
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/layout.tsx?v=$RANDOM" | cat >"app/(auth)/layout.tsx"
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/[...nextauth]/route.ts?v=$RANDOM" | cat >"app/api/auth/[...nextauth]/route.ts"
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/\[...nextauth\]/route.ts?v=$RANDOM" | cat >app/api/auth/\[...nextauth\]/route.ts
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-auth-form.tsx?v=$RANDOM" | cat >components/user-auth-form.tsx
 
