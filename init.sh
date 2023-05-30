@@ -38,6 +38,8 @@ pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwin
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
+# adding required shadcn/ui config and components
+
 pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
@@ -45,6 +47,8 @@ AUTORESPONSE
 pnpx shadcn-ui add button input label toast dropdown-menu avatar <<AUTORESPONSE
 
 AUTORESPONSE
+
+# adding required folders and files
 
 mkdir -p app
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >app/layout.tsx
