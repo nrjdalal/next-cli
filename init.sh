@@ -84,3 +84,6 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth.ts?v=$RANDOM" | cat >lib/validations/auth.ts
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts
+
+pnpx prisma init
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
