@@ -1,4 +1,4 @@
-Docker command to generate postgresql test database (it deletes itself on symstem reboot or closing docker) -
+Docker command to generate postgresql test database (it deletes itself on system reboot or on closing docker) -
 
 ```sh
 docker run -d --rm -P -p 5432:5432 -e POSTGRES_USER="johndoe" -e POSTGRES_PASSWORD="randompassword" -e POSTGRES_DB="mydb" --name postgres postgres:alpine
