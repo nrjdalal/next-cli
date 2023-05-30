@@ -71,9 +71,12 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts
 
 pnpm add @hookform/resolvers @next-auth/prisma-adapter @prisma/client next-auth react-hook-form zod && pnpm add -D prisma
 
-mkdir -p 'app/(auth)/access'
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.ts?v=$RANDOM" | cat >"middleware.ts"
+
+mkdir -p 'app/(auth)/access' && mkdir -p '/app/api/auth/[...nextauth]'
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/layout.tsx?v=$RANDOM" | cat >"app/(auth)/layout.tsx"
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/[...nextauth]/_route.ts?v=$RANDOM" | cat >"/app/api/auth/[...nextauth]/_route.ts"
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-auth-form.tsx?v=$RANDOM" | cat >components/user-auth-form.tsx
 
