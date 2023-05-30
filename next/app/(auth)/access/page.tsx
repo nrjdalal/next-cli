@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   description: 'Login to your account',
 }
 
-export default function LoginPage() {
+export default function AccessPage() {
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <Link
         href="/"
         className={cn(
           buttonVariants({ variant: 'ghost' }),
-          'absolute left-4 top-4 md:left-8 md:top-8'
+          'absolute left-4 top-20'
         )}
       >
         <>
@@ -37,14 +37,6 @@ export default function LoginPage() {
           </p>
         </div>
         <UserAuthForm />
-        <p className="px-8 text-center text-sm text-muted-foreground">
-          <Link
-            href="/register"
-            className="hover:text-brand underline underline-offset-4"
-          >
-            Don&apos;t have an account? Sign Up
-          </Link>
-        </p>
       </div>
     </div>
   )
