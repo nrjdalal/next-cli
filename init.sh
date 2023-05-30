@@ -35,10 +35,13 @@ pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
 
-pnpx shadcn-ui add button
+pnpx shadcn-ui add button <<AUTORESPONSE
+
+AUTORESPONSE
 
 mkdir -p app
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >app/layout.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/page.tsx?v=$RANDOM" | cat >app/page.tsx
 
 mkdir -p components
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/icons.tsx?v=$RANDOM" | cat >components/icons.tsx
