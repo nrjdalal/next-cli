@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth'
 import { getCurrentUser } from '@/lib/session'
 
 export const metadata = {
-  title: 'Dashboard',
+  title: 'Billing',
 }
 
 export default async function DashboardPage() {
@@ -15,5 +15,5 @@ export default async function DashboardPage() {
     redirect(authOptions?.pages?.signIn || '/access')
   }
 
-  return <>Dashboard</>
+  return <>Billing</>
 }

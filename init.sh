@@ -78,9 +78,11 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/l
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/\[...nextauth\]/route.ts?v=$RANDOM" | cat >app/api/auth/\[...nextauth\]/route.ts
 
-mkdir -p app/dashboard
+mkdir -p app/dashboard && mkdir -p app/dashboard/billing && mkdir -p app/dashboard/settings
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/layout.tsx?v=$RANDOM" | cat >app/dashboard/layout.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/page.tsx?v=$RANDOM" | cat >app/dashboard/page.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/settings/page.tsx?v=$RANDOM" | cat >app/dashboard/settings/page.tsx
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/dashboard-nav.tsx?v=$RANDOM" | cat >components/dashboard-nav.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-account-nav.tsx?v=$RANDOM" | cat >components/user-account-nav.tsx
@@ -100,3 +102,5 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-a
 
 pnpx prisma init
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
+
+pnpm add next@13.4.3
