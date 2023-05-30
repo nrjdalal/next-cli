@@ -32,43 +32,7 @@ EOF
 # adding prettier and plugins
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
 
-cat >.prettier.config.js <<EOF
-/** @type {import('prettier').Config} */
-module.exports = {
-  endOfLine: 'lf',
-  semi: false,
-  singleQuote: false,
-  tabWidth: 2,
-  trailingComma: 'es5',
-  importOrder: [
-    '^(react/(.*)$)|^(react$)',
-    '^(next/(.*)$)|^(next$)',
-    '<THIRD_PARTY_MODULES>',
-    '',
-    '^types$',
-    '^@/types/(.*)$',
-    '^@/config/(.*)$',
-    '^@/lib/(.*)$',
-    '^@/hooks/(.*)$',
-    '^@/components/ui/(.*)$',
-    '^@/components/(.*)$',
-    '^@/styles/(.*)$',
-    '^@/app/(.*)$',
-    '',
-    '^[./]',
-  ],
-  importOrderSeparation: false,
-  importOrderSortSpecifiers: true,
-  importOrderBuiltinModulesToTop: true,
-  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-  importOrderMergeDuplicateImports: true,
-  importOrderCombineTypeAndValueImports: true,
-  plugins: [
-    '@ianvs/prettier-plugin-sort-imports',
-    'prettier-plugin-tailwindcss',
-  ],
-}
-EOF
+curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/.prettier.config.js?v=$RANDOM" | cat >.prettier.config.js
 
 pnpx shadcn-ui init <<AUTORESPONSE
 yes
