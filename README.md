@@ -23,4 +23,5 @@ Homepage URL: http://localhost:3000
 Callback URL: http://localhost:3000/api/auth/callback/github
 ```
 
-5. Copy the Client ID and Client Secret and paste it in the .env.local file
+5. No need to enable device flow (it is disabled by default)
+6. Copy the Client ID and Client Secret and paste it in the .env.local file
