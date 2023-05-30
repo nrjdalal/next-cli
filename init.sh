@@ -42,7 +42,7 @@ pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
 
-pnpx shadcn-ui add button <<AUTORESPONSE
+pnpx shadcn-ui add button input label toast <<AUTORESPONSE
 
 AUTORESPONSE
 
@@ -69,10 +69,18 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts
 
 # adding next-auth and prisma
 
-pnpm add @next-auth/prisma-adapter @prisma/client next-auth && pnpm add -D prisma
+pnpm add @hookform/resolvers @next-auth/prisma-adapter @prisma/client next-auth react-hook-form zod && pnpm add -D prisma
 
+mkdir -p 'app/(auth)/access'
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/layout.tsx?v=$RANDOM" | cat >"app/(auth)/layout.tsx"
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
+
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-auth-form.tsx?v=$RANDOM" | cat >components/user-auth-form.tsx
+
+mkdir -p lib/validations
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/auth.ts?v=$RANDOM" | cat >lib/auth.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/db.ts?v=$RANDOM" | cat >lib/db.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.ts?v=$RANDOM" | cat >lib/session.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth?v=$RANDOM" | cat >lib/validations/auth.ts
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts

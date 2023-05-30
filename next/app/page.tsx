@@ -17,12 +17,7 @@ export default function IndexPage() {
         </p>
       </div>
       <div className="flex gap-4">
-        <Link
-          href={'/access'}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
+        <Link href={'/access'} rel="noreferrer" className={buttonVariants()}>
           Login / Register
         </Link>
         <Link
