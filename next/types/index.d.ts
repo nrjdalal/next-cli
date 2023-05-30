@@ -1,9 +1,9 @@
+import { Icons } from '@/components/icons'
+
 export type DashboardConfig = {
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]
 }
-
-import { Icons } from '@/components/icons'
 
 export type SidebarNavItem = {
   title: string
