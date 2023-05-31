@@ -132,3 +132,6 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subsc
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/stripe.ts?v=$RANDOM" | cat >lib/stripe.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscription.ts?v=$RANDOM" | cat >lib/subscription.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/utils.ts?v=$RANDOM" | cat >lib/utils.ts
+
+# running prettier
+pnpx prettier --write .
