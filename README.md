@@ -1,3 +1,9 @@
+Create new project -
+
+```sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nrjdalal/next-cli/main/init.sh)"
+```
+
 Docker command to generate postgresql test database (it deletes itself on system reboot or on closing docker) -
 
 ```sh
