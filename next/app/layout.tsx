@@ -6,6 +6,7 @@ import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/toaster'
 
 export const metadata: Metadata = {
   title: {
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <div className="flex-1">{children}</div>
             </div>
+            <Toaster />
             <TailwindIndicator />
           </ThemeProvider>
         </body>
