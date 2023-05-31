@@ -3,7 +3,7 @@
 DEV_MODE=true
 
 if [ "$DEV_MODE" = true ]; then
-  cd .. && rm -rf next && mkdir next && cd next
+  && rm -rf next && mkdir next && cd next
 fi
 
 pnpm create next-app --ts --tailwind --eslint --app --import-alias "@/*" --use-pnpm . <<AUTORESPONSE
