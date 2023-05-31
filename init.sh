@@ -60,6 +60,7 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/m
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/site-header.tsx?v=$RANDOM" | cat >components/site-header.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/tailwind-indicator.tsx?v=$RANDOM" | cat >components/tailwind-indicator.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-provider.tsx?v=$RANDOM" | cat >components/theme-provider.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/toaster.tsx?v=$RANDOM" | cat >components/toaster.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-toggle.tsx?v=$RANDOM" | cat >components/theme-toggle.tsx
 
 mkdir -p config
