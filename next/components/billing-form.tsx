@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useRouter } from "next/navigation"
 import { UserSubscriptionPlan } from "@/types"
 
 import { cn, formatDate } from "@/lib/utils"
@@ -27,10 +28,11 @@ export function BillingForm({
   className,
   ...props
 }: BillingFormProps) {
+  const router = useRouter()
+
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
-  async function onSubmit(event: any) {
-    event.preventDefault()
+  const upgradeToPro = async () => {
     setIsLoading(!isLoading)
 
     // Get a Stripe session URL.
@@ -53,8 +55,51 @@ export function BillingForm({
     }
   }
 
+  const cancelSubscription = async () => {
+    const response = await fetch("/api/users/cancel")
+
+    if (!response?.ok) {
+      return toast({
+        title: "Something went wrong.",
+        description: "Please refresh the page and try again.",
+        variant: "destructive",
+      })
+    }
+
+    const subscription = await response.json()
+    if (subscription) {
+      toast({
+        title: `Your subscription has been ${
+          subscription.cancel_at_period_end ? "canceled" : "resumed"
+        }.`,
+        description: subscription.cancel_at_period_end
+          ? "You will be able to use your plan until it expires."
+          : "You subscription will continue after it expires.",
+      })
+
+      router.refresh()
+    }
+  }
+
+  const getInvoice = async () => {
+    const response = await fetch("/api/users/invoice")
+
+    if (!response?.ok) {
+      return toast({
+        title: "Something went wrong.",
+        description: "Please refresh the page and try again.",
+        variant: "destructive",
+      })
+    }
+
+    const invoice = await response.json()
+    if (invoice) {
+      window.open(invoice.url, "_blank")
+    }
+  }
+
   return (
-    <form className={cn(className)} onSubmit={onSubmit} {...props}>
+    <main>
       <Card>
         <CardHeader>
           <CardTitle>Subscription Plan</CardTitle>
@@ -64,17 +109,49 @@ export function BillingForm({
           </CardDescription>
         </CardHeader>
         <CardContent>{subscriptionPlan.description}</CardContent>
-        <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
-          <button
-            type="submit"
-            className={cn(buttonVariants())}
-            disabled={isLoading}
-          >
-            {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
-            {subscriptionPlan.isPro ? "Manage Subscription" : "Upgrade to PRO"}
-          </button>
+        <CardFooter className="flex flex-col items-start space-y-2 lg:flex-row lg:justify-between lg:space-x-0">
+          {subscriptionPlan.isPro ? (
+            <div className="flex gap-4">
+              <button
+                className={cn(buttonVariants())}
+                disabled={isLoading}
+                onClick={() => {
+                  cancelSubscription()
+                }}
+              >
+                {isLoading && (
+                  <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                )}
+                {subscriptionPlan.isCanceled
+                  ? "Resume subscription"
+                  : "Cancel subscription"}
+              </button>
+
+              <button
+                className={cn(buttonVariants())}
+                disabled={isLoading}
+                onClick={() => {
+                  getInvoice()
+                }}
+              >
+                Latest Invoice
+              </button>
+            </div>
+          ) : (
+            <button
+              className={cn(buttonVariants())}
+              disabled={isLoading}
+              onClick={() => {
+                upgradeToPro()
+              }}
+            >
+              {isLoading && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              Upgrade to PRO
+            </button>
+          )}
+
           {subscriptionPlan.isPro ? (
             <p className="rounded-full text-xs font-medium">
               {subscriptionPlan.isCanceled
@@ -85,6 +162,6 @@ export function BillingForm({
           ) : null}
         </CardFooter>
       </Card>
-    </form>
+    </main>
   )
 }
