@@ -1,10 +1,8 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import { buttonVariants } from '@/components/ui/button'
-
-import { siteConfig } from '@/config/site'
-
-import { SiteHeader } from '@/components/site-header'
+import { siteConfig } from "@/config/site"
+import { buttonVariants } from "@/components/ui/button"
+import { SiteHeader } from "@/components/site-header"
 
 export default function IndexPage() {
   return (
@@ -22,14 +20,14 @@ export default function IndexPage() {
           </p>
         </div>
         <div className="flex gap-4">
-          <Link href={'/access'} rel="noreferrer" className={buttonVariants()}>
+          <Link href={"/access"} rel="noreferrer" className={buttonVariants()}>
             Login / Register
           </Link>
           <Link
             target="_blank"
             rel="noreferrer"
             href={siteConfig.links.github}
-            className={buttonVariants({ variant: 'outline' })}
+            className={buttonVariants({ variant: "outline" })}
           >
             GitHub
           </Link>

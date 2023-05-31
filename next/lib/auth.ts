@@ -1,16 +1,16 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { NextAuthOptions } from 'next-auth'
-import GitHubProvider from 'next-auth/providers/github'
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { NextAuthOptions } from "next-auth"
+import GitHubProvider from "next-auth/providers/github"
 
-import { db } from '@/lib/db'
+import { db } from "@/lib/db"
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db as any),
   session: {
-    strategy: 'jwt',
+    strategy: "jwt",
   },
   pages: {
-    signIn: '/access',
+    signIn: "/access",
   },
   providers: [
     GitHubProvider({

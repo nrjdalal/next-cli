@@ -1,14 +1,14 @@
 import {
-  LucideProps,
+  AlertTriangle,
   ChevronLeft,
+  Loader2,
+  LucideProps,
   Moon,
   SunMedium,
-  Loader2,
   Twitter,
   User,
   type Icon as LucideIcon,
-  AlertTriangle,
-} from 'lucide-react'
+} from "lucide-react"
 
 export type Icon = LucideIcon
 

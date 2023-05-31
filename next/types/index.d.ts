@@ -1,4 +1,4 @@
-import { Icons } from '@/components/icons'
+import { Icons } from "@/components/icons"
 
 export type DashboardConfig = {
   mainNav: MainNavItem[]
@@ -28,7 +28,7 @@ export type SubscriptionPlan = {
 }
 
 export type UserSubscriptionPlan = SubscriptionPlan &
-  Pick<User, 'stripeCustomerId' | 'stripeSubscriptionId'> & {
+  Pick<User, "stripeCustomerId" | "stripeSubscriptionId"> & {
     stripeCurrentPeriodEnd: number
     isPro: boolean
   }
