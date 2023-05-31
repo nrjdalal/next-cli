@@ -124,8 +124,8 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/b
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/header.tsx?v=$RANDOM" | cat >components/header.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/shell.tsx?v=$RANDOM" | cat >components/shell.tsx
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subscriptions.ts?v=$RANDOM" | cat >config/subscriptions
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subscription.ts?v=$RANDOM" | cat >config/subscription.ts
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/stripe.ts?v=$RANDOM" | cat >lib/stripe.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscriptions.ts?v=$RANDOM" | cat >lib/subscriptions.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscription.ts?v=$RANDOM" | cat >lib/subscription.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/utils.ts?v=$RANDOM" | cat >lib/utils.ts
