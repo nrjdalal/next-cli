@@ -44,7 +44,7 @@ pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
 
-pnpx shadcn-ui add button input label toast dropdown-menu avatar <<AUTORESPONSE
+pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
 
 AUTORESPONSE
 
@@ -84,10 +84,9 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/l
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/\[...nextauth\]/route.ts?v=$RANDOM" | cat >app/api/auth/\[...nextauth\]/route.ts
 
-mkdir -p app/dashboard && mkdir -p app/dashboard/billing && mkdir -p app/dashboard/settings
+mkdir -p app/dashboard && mkdir -p app/dashboard/settings
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/layout.tsx?v=$RANDOM" | cat >app/dashboard/layout.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/page.tsx?v=$RANDOM" | cat >app/dashboard/page.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/settings/page.tsx?v=$RANDOM" | cat >app/dashboard/settings/page.tsx
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/dashboard-nav.tsx?v=$RANDOM" | cat >components/dashboard-nav.tsx
@@ -110,3 +109,23 @@ pnpx prisma init
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
 
 pnpm add next@13.4.3
+
+# adding stripe
+pnpm add stripe
+
+mkdir -p app/dashboard/billing
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
+
+mkdir -p app/api/users/stripe && mkdir -p app/api/webhooks/stripe
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/stripe/route.ts?v=$RANDOM" | cat >app/api/users/stripe/route.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/webhooks/stripe/route.ts?v=$RANDOM" | cat >app/api/webhooks/stripe/route.ts
+
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/billing-form.tsx?v=$RANDOM" | cat >components/billing-form.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/header.tsx?v=$RANDOM" | cat >components/header.tsx
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/shell.tsx?v=$RANDOM" | cat >components/shell.tsx
+
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subscriptions.ts?v=$RANDOM" | cat >config/subscriptions
+
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/stripe.ts?v=$RANDOM" | cat >lib/stripe.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscriptions.ts?v=$RANDOM" | cat >lib/subscriptions.ts
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/utils.ts?v=$RANDOM" | cat >lib/utils.ts

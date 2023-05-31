@@ -7,6 +7,7 @@ import {
   Twitter,
   User,
   type Icon as LucideIcon,
+  AlertTriangle,
 } from 'lucide-react'
 
 export type Icon = LucideIcon
@@ -18,6 +19,7 @@ export const Icons = {
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   user: User,
+  warning: AlertTriangle,
   logo: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path
