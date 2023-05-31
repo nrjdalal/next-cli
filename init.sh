@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEV_MODE=false
+DEV_MODE=true
 
 if [ "$DEV_MODE" = true ]; then
   rm -rf next && mkdir next && cd next
@@ -36,6 +36,7 @@ EOF
 
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prettier.config.js?v=$RANDOM" | cat >prettier.config.js
+curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettierignore?v=$RANDOM" | cat >.prettierignore
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
 # adding required shadcn/ui config and components
