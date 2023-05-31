@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEV_MODE=true
+DEV_MODE=false
 
 if [ "$DEV_MODE" = true ]; then
   rm -rf next && mkdir next && cd next
@@ -119,7 +119,7 @@ pnpm add stripe
 mkdir -p app/dashboard/billing
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
 
-mkdir -p app/api/users/stripe && mkdir -p app/api/webhooks/stripe
+mkdir -p app/api/users/stripe && mkdir -p app/api/users/invoice && mkdir -p app/api/users/cancel && mkdir -p app/api/webhooks/stripe
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/cancel/route.ts?v=$RANDOM" | cat >app/api/users/cancel/route.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/invoice/route.ts?v=$RANDOM" | cat >app/api/users/invoice/route.ts
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/stripe/route.ts?v=$RANDOM" | cat >app/api/users/stripe/route.ts
