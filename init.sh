@@ -3,7 +3,7 @@
 DEV_MODE=true
 
 if [ "$DEV_MODE" = true ]; then
-  rm -rf next && mkdir next && cd next
+  cd .. && rm -rf next && mkdir next && cd next
 fi
 
 pnpm create next-app --ts --tailwind --eslint --app --import-alias "@/*" --use-pnpm . <<AUTORESPONSE
@@ -76,6 +76,7 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts
 pnpm add @hookform/resolvers @next-auth/prisma-adapter @prisma/client next-auth react-hook-form zod && pnpm add -D prisma
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.example"
+curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.local"
 
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.ts?v=$RANDOM" | cat >"middleware.ts"
 
