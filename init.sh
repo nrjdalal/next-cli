@@ -34,7 +34,7 @@ EOF
 
 # adding configuration files
 
-pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss
+pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss eslint-config-prettier eslint-plugin-tailwindcss
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prettier.config.js?v=$RANDOM" | cat >prettier.config.js
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettierignore?v=$RANDOM" | cat >.prettierignore
 curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
