@@ -45,9 +45,7 @@ pnpx shadcn-ui init <<AUTORESPONSE
 yes
 AUTORESPONSE
 
-pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
-
-AUTORESPONSE
+pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card
 
 # adding required folders and files
 
