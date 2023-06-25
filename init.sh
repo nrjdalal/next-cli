@@ -42,10 +42,20 @@ curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc
 # adding required shadcn/ui config and components
 
 pnpx shadcn-ui init <<AUTORESPONSE
-yes
+
+
+
+
+
+
+
+
+
 AUTORESPONSE
 
-pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card
+pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
+
+AUTORESPONSE
 
 # adding required folders and files
 
