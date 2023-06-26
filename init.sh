@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DEV_MODE=true
+DEV_MODE=false
 
 if [ "$DEV_MODE" = true ]; then
-  rm -rf next && mkdir next && cd next
+  cd next && rm -rf * .*
 fi
 
 pnpm create next-app --ts --tailwind --eslint --app --import-alias "@/*" --use-pnpm . <<AUTORESPONSE
