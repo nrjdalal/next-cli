@@ -42,9 +42,9 @@ curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc
 # adding required shadcn/ui config and components
 
 pnpm add lucide-react
-pnpx shadcn-ui init
+pnpx shadcn-ui@latest init -y
 
-pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
+pnpx shadcn-ui@latest add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
 
 AUTORESPONSE
 
