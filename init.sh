@@ -35,9 +35,9 @@ EOF
 # adding configuration files
 
 pnpm add -D @ianvs/prettier-plugin-sort-imports prettier prettier-plugin-tailwindcss eslint-config-prettier eslint-plugin-tailwindcss
-curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prettier.config.js?v=$RANDOM" | cat >prettier.config.js
-curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettierignore?v=$RANDOM" | cat >.prettierignore
-curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prettier.config.js?v=$RANDOM" | cat >prettier.config.js
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.prettierignore?v=$RANDOM" | cat >.prettierignore
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc.json?v=$RANDOM" | cat >.eslintrc.json
 
 # adding required shadcn/ui config and components
 
@@ -51,86 +51,86 @@ AUTORESPONSE
 # adding required folders and files
 
 mkdir -p app
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >app/layout.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/page.tsx?v=$RANDOM" | cat >app/page.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/layout.tsx?v=$RANDOM" | cat >app/layout.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/page.tsx?v=$RANDOM" | cat >app/page.tsx
 
 mkdir -p components
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/icons.tsx?v=$RANDOM" | cat >components/icons.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/main-nav.tsx?v=$RANDOM" | cat >components/main-nav.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/site-header.tsx?v=$RANDOM" | cat >components/site-header.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/tailwind-indicator.tsx?v=$RANDOM" | cat >components/tailwind-indicator.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-provider.tsx?v=$RANDOM" | cat >components/theme-provider.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/toaster.tsx?v=$RANDOM" | cat >components/toaster.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-toggle.tsx?v=$RANDOM" | cat >components/theme-toggle.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/icons.tsx?v=$RANDOM" | cat >components/icons.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/main-nav.tsx?v=$RANDOM" | cat >components/main-nav.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/site-header.tsx?v=$RANDOM" | cat >components/site-header.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/tailwind-indicator.tsx?v=$RANDOM" | cat >components/tailwind-indicator.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-provider.tsx?v=$RANDOM" | cat >components/theme-provider.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/toaster.tsx?v=$RANDOM" | cat >components/toaster.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/theme-toggle.tsx?v=$RANDOM" | cat >components/theme-toggle.tsx
 
 mkdir -p config
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/site.ts?v=$RANDOM" | cat >config/site.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/site.ts?v=$RANDOM" | cat >config/site.ts
 
 mkdir -p lib
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/fonts.ts?v=$RANDOM" | cat >lib/fonts.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/fonts.ts?v=$RANDOM" | cat >lib/fonts.ts
 
 mkdir -p types
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts?v=$RANDOM" | cat >types/nav.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/nav.ts?v=$RANDOM" | cat >types/nav.ts
 
 # adding next-auth and prisma
 
 pnpm add @hookform/resolvers @next-auth/prisma-adapter @prisma/client next-auth react-hook-form zod && pnpm add -D prisma
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.example"
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.local"
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.example"
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.env.example?v=$RANDOM" | cat >".env.local"
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.ts?v=$RANDOM" | cat >"middleware.ts"
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/middleware.ts?v=$RANDOM" | cat >"middleware.ts"
 
 mkdir -p 'app/(auth)/access' && mkdir -p 'app/api/auth/[...nextauth]'
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/layout.tsx?v=$RANDOM" | cat >"app/(auth)/layout.tsx"
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/\[...nextauth\]/route.ts?v=$RANDOM" | cat >app/api/auth/\[...nextauth\]/route.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/layout.tsx?v=$RANDOM" | cat >"app/(auth)/layout.tsx"
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/(auth)/access/page.tsx?v=$RANDOM" | cat >"app/(auth)/access/page.tsx"
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/auth/\[...nextauth\]/route.ts?v=$RANDOM" | cat >app/api/auth/\[...nextauth\]/route.ts
 
 mkdir -p app/dashboard && mkdir -p app/dashboard/settings
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/layout.tsx?v=$RANDOM" | cat >app/dashboard/layout.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/page.tsx?v=$RANDOM" | cat >app/dashboard/page.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/settings/page.tsx?v=$RANDOM" | cat >app/dashboard/settings/page.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/layout.tsx?v=$RANDOM" | cat >app/dashboard/layout.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/page.tsx?v=$RANDOM" | cat >app/dashboard/page.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/settings/page.tsx?v=$RANDOM" | cat >app/dashboard/settings/page.tsx
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/dashboard-nav.tsx?v=$RANDOM" | cat >components/dashboard-nav.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-account-nav.tsx?v=$RANDOM" | cat >components/user-account-nav.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-auth-form.tsx?v=$RANDOM" | cat >components/user-auth-form.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-avatar.tsx?v=$RANDOM" | cat >components/user-avatar.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/dashboard-nav.tsx?v=$RANDOM" | cat >components/dashboard-nav.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-account-nav.tsx?v=$RANDOM" | cat >components/user-account-nav.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-auth-form.tsx?v=$RANDOM" | cat >components/user-auth-form.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/user-avatar.tsx?v=$RANDOM" | cat >components/user-avatar.tsx
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/dashboard.ts?v=$RANDOM" | cat >config/dashboard.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/dashboard.ts?v=$RANDOM" | cat >config/dashboard.ts
 
 mkdir -p lib/validations
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/auth.ts?v=$RANDOM" | cat >lib/auth.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/db.ts?v=$RANDOM" | cat >lib/db.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.ts?v=$RANDOM" | cat >lib/session.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth.ts?v=$RANDOM" | cat >lib/validations/auth.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/auth.ts?v=$RANDOM" | cat >lib/auth.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/db.ts?v=$RANDOM" | cat >lib/db.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/session.ts?v=$RANDOM" | cat >lib/session.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/validations/auth.ts?v=$RANDOM" | cat >lib/validations/auth.ts
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/index.d.ts?v=$RANDOM" | cat >types/index.d.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/index.d.ts?v=$RANDOM" | cat >types/index.d.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-auth.d.ts?v=$RANDOM" | cat >types/next-auth.d.ts
 
 pnpx prisma init
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
 
 # adding stripe
 pnpm add stripe
 
 mkdir -p app/dashboard/billing
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/dashboard/billing/page.tsx?v=$RANDOM" | cat >app/dashboard/billing/page.tsx
 
 mkdir -p app/api/users/stripe && mkdir -p app/api/users/invoice && mkdir -p app/api/users/cancel && mkdir -p app/api/webhooks/stripe
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/cancel/route.ts?v=$RANDOM" | cat >app/api/users/cancel/route.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/invoice/route.ts?v=$RANDOM" | cat >app/api/users/invoice/route.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/stripe/route.ts?v=$RANDOM" | cat >app/api/users/stripe/route.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/webhooks/stripe/route.ts?v=$RANDOM" | cat >app/api/webhooks/stripe/route.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/cancel/route.ts?v=$RANDOM" | cat >app/api/users/cancel/route.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/invoice/route.ts?v=$RANDOM" | cat >app/api/users/invoice/route.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/users/stripe/route.ts?v=$RANDOM" | cat >app/api/users/stripe/route.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/app/api/webhooks/stripe/route.ts?v=$RANDOM" | cat >app/api/webhooks/stripe/route.ts
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/billing-form.tsx?v=$RANDOM" | cat >components/billing-form.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/header.tsx?v=$RANDOM" | cat >components/header.tsx
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/shell.tsx?v=$RANDOM" | cat >components/shell.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/billing-form.tsx?v=$RANDOM" | cat >components/billing-form.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/header.tsx?v=$RANDOM" | cat >components/header.tsx
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/components/shell.tsx?v=$RANDOM" | cat >components/shell.tsx
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subscriptions.ts?v=$RANDOM" | cat >config/subscriptions.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/config/subscriptions.ts?v=$RANDOM" | cat >config/subscriptions.ts
 
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/stripe.ts?v=$RANDOM" | cat >lib/stripe.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscription.ts?v=$RANDOM" | cat >lib/subscription.ts
-curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/utils.ts?v=$RANDOM" | cat >lib/utils.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/stripe.ts?v=$RANDOM" | cat >lib/stripe.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/subscription.ts?v=$RANDOM" | cat >lib/subscription.ts
+curl -fsSL "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/lib/utils.ts?v=$RANDOM" | cat >lib/utils.ts
 
 # running prettier
 pnpx prettier --write .
