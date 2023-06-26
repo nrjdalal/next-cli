@@ -41,6 +41,7 @@ curl -s "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/.eslintrc
 
 # adding required shadcn/ui config and components
 
+pnpm add lucide-react
 pnpx shadcn-ui init
 
 pnpx shadcn-ui add button input label toast dropdown-menu avatar alert card <<AUTORESPONSE
@@ -108,8 +109,6 @@ curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/types/next-a
 
 pnpx prisma init
 curl "https://raw.githubusercontent.com/nrjdalal/next-cli/main/next/prisma/schema.prisma?v=$RANDOM" | cat >prisma/schema.prisma
-
-pnpm add next@13.4.3
 
 # adding stripe
 pnpm add stripe
