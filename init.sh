@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEV_MODE=false
+DEV_MODE=true
 
 if [ "$DEV_MODE" = true ]; then
   rm -rf next && mkdir next && cd next
